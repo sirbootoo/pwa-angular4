@@ -6,6 +6,10 @@ import {MaterialModule} from '@angular/material';
 import { PostComponent } from './post/post.component';
 import {HttpModule} from '@angular/http';
 import {AppShellModule} from '@angular/app-shell';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { RouterModule } from '@angular/router';
+
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +20,11 @@ import {AppShellModule} from '@angular/app-shell';
     BrowserModule,
     MaterialModule,
     AppShellModule.runtime(),
-    HttpModule
+    HttpModule,
+    NgxPaginationModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

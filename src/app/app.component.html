@@ -1,9 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<md-toolbar color="primary">
+<md-toolbar color="accent">
   <span>{{title}}</span>
+  <span class="onlineOffline">
+    <i class="fa fa-circle online" aria-hidden="true" *ngIf="onlineOffline"></i>
+    <i class="fa fa-circle offline" aria-hidden="true" *ngIf="!onlineOffline"></i>
+  </span>
 </md-toolbar>
 
 <md-progress-bar mode="indeterminate" *shellRender></md-progress-bar>
 <div *shellNoRender>
   <app-post></app-post>
 </div>
+
+<style>
+  md-toolbar span.onlineOffline {
+    float: right !important;
+    text-align: right !important;
+    position: absolute;
+    right: 1em;
+  }
+  .online{
+    color: rgb(42, 238, 42) !important;
+  }
+  .offline{
+    color: crimson !important;
+  }
+</style>

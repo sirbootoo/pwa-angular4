@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Pocket News';
+  public onlineOffline: boolean = navigator.onLine;
+
+  constructor(){
+    window.addEventListener('online', () => {this.onlineOffline = true});
+    window.addEventListener('offline', () => {this.onlineOffline = false});
+  }
 }
