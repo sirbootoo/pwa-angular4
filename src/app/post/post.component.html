@@ -11,7 +11,7 @@
 <!-- two line list -->
 <md-card>
   <md-list>
-      <md-progress-bar mode="indeterminate" *ngIf="rssFeeds.length == 0"></md-progress-bar>
+      <span class="fa-li fa fa-spinner fa-spin" *ngIf="rssFeeds.length == 0"></span>
     <md-card *ngIf="rssFeeds.length != 0">
       <md-list-item *ngFor="let feed of rssFeeds | paginate: { itemsPerPage: 8, currentPage: index }">
 
